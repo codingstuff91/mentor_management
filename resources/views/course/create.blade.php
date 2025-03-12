@@ -26,6 +26,14 @@
                         @enderror
                     </div>
 
+                    <div class="flex flex-col align-items-center">
+                        <label class="mt-2">Cours payé</label>
+                        <select class="mt-2 mb-4 rounded-lg" name="paid">
+                            <option value="0">NON</option>
+                            <option value="1">OUI</option>
+                        </select>
+                    </div>
+
                     <div class="flex flex-col justify-center">
                         <label>Pack d'heures</label>
                         <input type="checkbox" class="rounded-lg" name="hours_pack">

@@ -65,6 +65,7 @@ class CourseController extends Controller
             'start_hour' => $request->start_hour,
             'end_hour' => CourseService::computeEndHour($request->start_hour, $request->duration),
             'hours_count' => $request->duration,
+            'paid' => $request->paid,
             'hours_pack' => $isHoursPack,
             'learned_notions' => $request->learned_notions,
             'hourly_rate' => $request->hourly_rate,
