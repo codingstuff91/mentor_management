@@ -19,7 +19,7 @@
             <div class="p-2 bg-white shadow-sm border-b border-gray-400 w-full my-4 mx-auto sm:w-3/4">
                 <div class="my-2 flex flex-col justify-between">
                     <p><i class="fas fa-calendar-day mr-2"></i>{{ $course->date->format('d/m/Y') }}</p>
-                    <p><i class="fas fa-clock"></i> {{ $course->start_hour->format('H:i') }} --> {{ $course->end_hour->format('H:i') }} ({{ $course->hours_count }}heure{{ $course->hours_count > 1 ? "s" : ""}})</p>
+                    <p><i class="fas fa-clock"></i> {{ $course->duration }}</p>
                 </div>
                 <div class="flex flex-col w-full">
                     <h2 class="text-xl font-bold">Notions travaillées : </h2>
