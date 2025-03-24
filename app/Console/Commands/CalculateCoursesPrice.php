@@ -32,7 +32,7 @@ class calculateCoursesPrice extends Command
         $courses = Course::all();
 
         foreach ($courses as $course) {
-            $course->price = CourseService::calculate_total_price($course->hours_count, $course->hourly_rate);
+            $course->price = CourseService::calculate_total_price($course->duration, $course->hourly_rate);
 
             $course->save();
         }
