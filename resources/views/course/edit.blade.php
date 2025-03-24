@@ -20,14 +20,20 @@
                         <label>Date du cours</label>
                         <input type="date" name="course_date" value="{{ $course->date->format('Y-m-d') }}" class="rounded-lg mt-2">
 
-                        <label>Durée du cours</label>
-                        <input type="date" name="duration" value="{{ $course->duration }}" class="rounded-lg mt-2">
+                        <label class="mt-2">Durée du cours</label>
+                        <input type="time" name="duration" value="{{ $course->duration }}" class="rounded-lg mt-2">
 
                         <label class="mt-2">Cours payé</label>
-                        <select class="mt-2 mb-4 rounded-lg" name="paid">
-                            <option value="0" @if ($course->paid == 0) selected="selected" @endif>NON</option>
-                            <option value="1" @if ($course->paid == 1) selected="selected" @endif>OUI</option>
-                        </select>
+                        <div class="mt-2 mb-4 flex justify-center gap-4">
+                            <div>
+                                <input type="radio" id="paid_no" name="paid" value="0" @if ($course->paid == 0) checked @endif>
+                                <label for="paid_no">NON</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="paid_yes" name="paid" value="1" @if ($course->paid == 1) checked @endif>
+                                <label for="paid_yes">OUI</label>
+                            </div>
+                        </div>
 
                         <textarea name="learned_notions" cols="30" rows="10">
                             {!! $course->learned_notions !!}
