@@ -23,15 +23,17 @@
                         <div class="text-base font-bold mb-2 p-2 bg-gray-200 rounded-lg">
                             <i class="fas fa-user mr-2"></i>{{ $course->student->name }}
                         </div>
-                        <h1 class="text-sm font-extrabold">
-                            <i class="fas fa-calendar-day mr-2"></i>{{ $course->date->format('d/m/Y') }}
-                            <i class="fas fa-calendar-day mr-2"></i>{{ $course->duration }}
+                        <h1 class="text-lg font-extrabold">
+                            <i class="fas fa-calendar-day mx-2"></i>{{ $course->date->format('d/m/Y') }}
 
                             <span class="px-2 text-xs rounded {{$course->paid ? "bg-green-200" : "bg-red-200"}}">
                                 <i class="fas fa-dollar-sign"></i>
                                 {{ $course->paid ? "Payé" : "Non payé" }}
                             </span>
                         </h1>
+                        <p class="mt-2">
+                            <i class="fas fa-clock mx-2"></i>{{ $course->duration }}
+                        </p>
                         <p class="mt-2">{!! $course->learned_notions !!}</p>
                     </div>
                     <div class="flex flex-row h-1/2">
