@@ -18,9 +18,9 @@ class CreateCoursesTable extends Migration
             $table->integer('student_id');
             $table->integer('invoice_id');
             $table->timestamp('date');
-            $table->timestamp('start_hour');
-            $table->timestamp('end_hour');
-            $table->integer('hours_count');
+            $table->timestamp('start_hour')->nullable();
+            $table->timestamp('end_hour')->nullable();
+            $table->integer('hours_count')->nullable();
             $table->boolean('hours_pack')->default(false);
             $table->integer('hourly_rate');
             $table->text('learned_notions');

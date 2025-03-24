@@ -18,8 +18,6 @@ class Course extends Model
      */
     protected $casts = [
         'date' => 'date',
-        'start_hour' => 'datetime',
-        'end_hour' => 'datetime',
     ];
 
     public function invoice()

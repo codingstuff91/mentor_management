@@ -42,17 +42,8 @@
 
                 <div class="my-2 columns-2 gap-4">
                     <div class="flex flex-col align-items-center">
-                        <label class="my-2">Heure début</label>
-                        <input type="time" name="start_hour" class="rounded-lg">
-                        @error('start_hour')
-                            <div class="text-red-400">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    <div class="flex flex-col align-items-center">
-                        <label class="my-2">Nombre heures</label>
+                        <label class="my-2">Durée du cours</label>
                         <input type="time" name="duration" class="rounded-lg" value="01:00">
-
                         @error('duration')
                             <div class="text-red-400">{{ $message }}</div>
                         @enderror

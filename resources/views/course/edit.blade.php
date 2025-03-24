@@ -20,12 +20,8 @@
                         <label>Date du cours</label>
                         <input type="date" name="course_date" value="{{ $course->date->format('Y-m-d') }}" class="rounded-lg mt-2">
 
-                        <div class=" mt-4 columns-2 gap-4">
-                            <div class="flex flex-col">
-                                <label class="mt-2">Heure début</label>
-                                <input type="time" class="rounded-lg" name="start_hour" value="{{ $course->start_hour->format('H:i') }}">
-                            </div>
-                        </div>
+                        <label>Durée du cours</label>
+                        <input type="date" name="duration" value="{{ $course->duration }}" class="rounded-lg mt-2">
 
                         <label class="mt-2">Cours payé</label>
                         <select class="mt-2 mb-4 rounded-lg" name="paid">

@@ -27,7 +27,7 @@ class StoreCourseRequest extends FormRequest
             'student' => 'required',
             'invoice' => 'required',
             'course_date' => 'required',
-            'start_hour' => 'required',
+            'duration' => 'required',
             'learned_notions' => 'required',
             'hourly_rate' => 'required',
         ];
@@ -39,7 +39,7 @@ class StoreCourseRequest extends FormRequest
             'student.required' => 'Veuillez sélectionner un étudiant',
             'invoice.required' => 'Veuillez choisir une facture',
             'date.required' => 'Veuillez sélectionner une date',
-            'start_hour.required' => 'Veuillez choisir une heure de début',
+            'duration.required' => 'Veuillez saisir une durée',
             'learned_notions.required' => 'Veuillez préciser les notions abordées durant le cours',
             'hourly_rate.required' => 'Veuillez saisir un taux horaire',
         ];

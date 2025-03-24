@@ -62,9 +62,7 @@ class CourseController extends Controller
             'student_id' => $request->student,
             'invoice_id' => $request->invoice,
             'date' => $request->course_date,
-            'start_hour' => $request->start_hour,
-            'end_hour' => CourseService::computeEndHour($request->start_hour, $request->duration),
-            'hours_count' => $request->duration,
+            'duration' => $request->duration,
             'paid' => $request->paid,
             'hours_pack' => $isHoursPack,
             'learned_notions' => $request->learned_notions,
@@ -100,13 +98,10 @@ class CourseController extends Controller
      */
     public function update(UpdateCourseRequest $request, Course $course)
     {
-//        dd($request->all());
-
         $course->update([
             'paid' => $request->paid,
             'date' => $request->course_date,
-            'start_hour' => $request->start_hour,
-            'end_hour' => CourseService::computeEndHour($request->start_hour, $course->hours_count),
+            'duration' => $request->duration,
             'learned_notions' => $request->learned_notions,
             'invoice_id' => $request->invoice,
         ]);

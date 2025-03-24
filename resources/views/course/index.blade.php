@@ -25,15 +25,13 @@
                         </div>
                         <h1 class="text-sm font-extrabold">
                             <i class="fas fa-calendar-day mr-2"></i>{{ $course->date->format('d/m/Y') }}
+                            <i class="fas fa-calendar-day mr-2"></i>{{ $course->duration }}
 
                             <span class="px-2 text-xs rounded {{$course->paid ? "bg-green-200" : "bg-red-200"}}">
                                 <i class="fas fa-dollar-sign"></i>
                                 {{ $course->paid ? "Payé" : "Non payé" }}
                             </span>
                         </h1>
-                        <p class="text-sm font-extrabold">
-                            <i class="fas fa-clock my-2"></i> {{ $course->start_hour->format('H:i') }} -> {{ $course->end_hour->format('H:i') }} ({{ $course->hours_count }} heure{{ $course->hours_count > 1 ? "s" : "" }})
-                        </p>
                         <p class="mt-2">{!! $course->learned_notions !!}</p>
                     </div>
                     <div class="flex flex-row h-1/2">
