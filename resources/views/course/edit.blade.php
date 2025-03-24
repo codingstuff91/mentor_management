@@ -27,11 +27,11 @@
                         <div class="mt-2 mb-4 flex justify-center gap-4">
                             <div>
                                 <input type="radio" id="paid_no" name="paid" value="0" @if ($course->paid == 0) checked @endif>
-                                <label for="paid_no">NON</label>
+                                <label for="paid_no" class="text-red-500 font-bold">NON</label>
                             </div>
                             <div>
                                 <input type="radio" id="paid_yes" name="paid" value="1" @if ($course->paid == 1) checked @endif>
-                                <label for="paid_yes">OUI</label>
+                                <label for="paid_yes" class="text-green-600 font-bold">OUI</label>
                             </div>
                         </div>
 
