@@ -14,7 +14,7 @@ class InvoiceService
         $total = 0;
 
         foreach ($courses as $course) {
-            $timer = Carbon::parse($course->hours_count);
+            $timer = Carbon::parse($course->duration);
 
             // Calculer le total des heures au format float
             $totalHoursFloat = $timer->hour + ($timer->minute / 60.0);
@@ -32,8 +32,8 @@ class InvoiceService
         $total = Carbon::parse('00:00');
 
         foreach ($courses as $course) {
-            $total->addHours(Carbon::parse($course->hours_count)->hour);
-            $total->addMinutes(Carbon::parse($course->hours_count)->minute);
+            $total->addHours(Carbon::parse($course->duration)->hour);
+            $total->addMinutes(Carbon::parse($course->duration)->minute);
         }
 
         return $total->format('H:i');
