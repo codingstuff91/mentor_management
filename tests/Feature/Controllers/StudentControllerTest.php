@@ -121,9 +121,7 @@ test('can display the course details of a student', function () {
         ->assertOk()
         ->assertSee($this->student->goals)
         ->assertSee($firstStudentCourse->date->format('d/m/Y'))
-        ->assertSee($firstStudentCourse->start_hour->format('H:i'))
-        ->assertSee($firstStudentCourse->end_hour->format('H:i'))
-        ->assertSeeText($firstStudentCourse->hours_count . "heure")
+        ->assertSeeText($firstStudentCourse->duration)
         ->assertSee($firstStudentCourse->learned_notions);
 });
 
