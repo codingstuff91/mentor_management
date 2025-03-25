@@ -9,7 +9,7 @@ it('updates courses with duration based on the hours count old column', function
     $student = createStudentWithSubjectAndCustomer($customer);
     createCourseWithStudentAndInvoice($student, $customer->invoice->first());
 
-    // Put wrong price value for the first course
+    // Put inital value into old hours_count for the first course
     $course = Course::first();
     $course->hours_count = 1;
     $course->save();
