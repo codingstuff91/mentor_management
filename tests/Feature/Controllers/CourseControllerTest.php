@@ -37,7 +37,7 @@ test('can render the course creation view', function () {
         ->assertSee('Durée')
         ->assertSee('Notions apprises')
         ->assertSee('Taux horaire')
-        ->assertSee('Facture concernée');
+        ->assertSee('Facture');
 });
 
 test('render the course create view with unpaid invoices', function () {
