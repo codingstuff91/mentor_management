@@ -19,7 +19,7 @@
         "nunomaduro/collision": "^7.0",
         "pestphp/pest": "2.36.*",
         "pestphp/pest-plugin-laravel": "2.4.*",
-        "phpunit/phpunit": "^10.0",
+        "phpunit/phpunit": "10.5.*",
         "spatie/laravel-ignition": "2.9.*"
     },
     "autoload": {
