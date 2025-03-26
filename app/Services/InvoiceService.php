@@ -9,20 +9,7 @@ class InvoiceService
 {
     public static function compute_total_price(Invoice $invoice): int
     {
-        $courses = $invoice->courses;
-
-        $total = 0;
-
-        foreach ($courses as $course) {
-            $timer = Carbon::parse($course->duration);
-
-            // Calculer le total des heures au format float
-            $totalHoursFloat = $timer->hour + ($timer->minute / 60.0);
-
-            $total += $totalHoursFloat * $course->hourly_rate;
-        }
-
-        return $total;
+        return $invoice->courses->sum('price');
     }
 
     public static function compute_total_hours(Invoice $invoice): string
