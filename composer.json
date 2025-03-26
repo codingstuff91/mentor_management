@@ -7,7 +7,6 @@
     "require": {
         "php": "^7.3|^8.0",
         "doctrine/dbal": "3.9.*",
-        "fruitcake/laravel-cors": "dev-develop",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/breeze": "^1.6",
         "laravel/framework": "10.48.*",
