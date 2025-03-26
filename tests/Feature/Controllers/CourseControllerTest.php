@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Course;
 use App\Models\Customer;
 use App\Models\Invoice;
 use Tests\Factories\CourseRequestDataFactory;
@@ -33,14 +34,13 @@ test('can render the course creation view', function () {
         ->assertOk()
         ->assertSee('Eleve')
         ->assertSee('Date du cours')
-        ->assertSee('Heure début')
-        ->assertSee('Heure fin')
+        ->assertSee('Durée')
         ->assertSee('Notions apprises')
         ->assertSee('Taux horaire')
-        ->assertSee('Facture concernée');
+        ->assertSee('Facture');
 });
 
-test('render the student create view with unpaid invoices', function () {
+test('render the course create view with unpaid invoices', function () {
     $unpaidInvoice = Invoice::factory()
         ->for(Customer::factory())
         ->unpaid()
@@ -59,7 +59,7 @@ test('render the student create view with unpaid invoices', function () {
         ->assertDontSee($paidInvoice->month_year_creation . " -- " . $paidInvoice->customer->name );
 });
 
-test('fills the create student page with current date', function () {
+test('fills the create course page with current date', function () {
     $currentDate = now()->format('Y-m-d');
 
     $response = $this->get(route('course.create'));
@@ -74,22 +74,10 @@ test('store a new course', function () {
     assertDatabaseCount('courses', 2);
 });
 
-test('cannot store a new course without choosing an student', function () {
+test('cannot store a new course without choosing a student', function () {
     $response = post(route('course.store'), $this->courseRequestData->create(['student' => null]));
 
     $response->assertSessionHasErrors('student');
-});
-
-test('cannot store a new course without a start hour', function () {
-    $response = $this->post(route('course.store'), $this->courseRequestData->create(['start_hour' => null]));
-
-    $response->assertSessionHasErrors('start_hour');
-});
-
-test('cannot store a new course without an end hour', function () {
-    $response = post(route('course.store'), $this->courseRequestData->create(['end_hour' => null]));
-
-    $response->assertSessionHasErrors('end_hour');
 });
 
 test('cannot store a new course without writing the course covered concepts', function () {
@@ -133,8 +121,7 @@ test('render the edit view with course informations', function () {
     $response
         ->assertOk()
         ->assertSee($this->course->date->format('Y-m-d'))
-        ->assertSee($this->course->start_hour->format('H:i'))
-        ->assertSee($this->course->end_hour->format('H:i'))
+        ->assertSee($this->course->duration)
         ->assertSee($this->course->paid)
         ->assertSeeText($this->course->learned_notions);
 });
@@ -154,7 +141,7 @@ test('update a course with its invoice', function () {
     expect($this->course->learned_notions)
         ->toBe("Example notions text")
         ->and($this->course->paid)->toBe(1)
-        ->and($this->course->hours_count)->toBe(1)
+        ->and($this->course->duration)->toBe('01:00')
         ->and($this->course->invoice->id)->toBe($newInvoice->id);
 });
 

@@ -18,9 +18,8 @@ class CourseRequestDataFactory
             'student' => Student::first()->id,
             'invoice' => Invoice::first()->id,
             'paid' => true,
-            "start_hour" => "18:00",
-            "end_hour" => "19:00",
-            'date' => "2023-07-01",
+            'course_date' => "2023-07-01",
+            "duration" => "01:00",
             'learned_notions' => "Example notions text",
             'hourly_rate' => 50,
         ];

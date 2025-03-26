@@ -18,14 +18,7 @@ class Course extends Model
      */
     protected $casts = [
         'date' => 'date',
-        'start_hour' => 'datetime',
-        'end_hour' => 'datetime',
     ];
-
-    public function getTotalPriceAttribute()
-    {
-        return $this->hourly_rate * $this->hours_count;
-    }
 
     public function invoice()
     {

@@ -16,35 +16,37 @@
                     @endforeach
                 </select>
 
-                <div class="my-2 flex flex-row justify-between items-center">
+                <div class="my-2 flex flex-row justify-between align-items-center">
                     <div class="flex flex-col align-items-center">
                         <label class="my-2">Date du cours</label>
-                        <input type="date" name="date" class="rounded-lg" value="{{ $currentDay }}">
-                        @error('date')
+                        <input type="date" name="course_date" class="rounded-lg" value="{{ $currentDay }}">
+
+                        @error('course_date')
                             <div class="text-red-400">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="flex flex-col justify-center">
-                        <label>Pack d'heures</label>
-                        <input type="checkbox" class="rounded-lg" name="hours_pack">
+
+                    <div class="flex flex-col align-items-center">
+                        <label class="mt-2">Cours payé</label>
+                        <select class="mt-2 mb-4 rounded-lg" name="paid">
+                            <option value="0">NON</option>
+                            <option value="1">OUI</option>
+                        </select>
                     </div>
                 </div>
 
-                <div class="my-2 columns-2 gap-4">
+                <div class="my-2 columns-2 gap-4 flex flex-row justify-between items-center">
                     <div class="flex flex-col align-items-center">
-                        <label class="my-2">Heure début</label>
-                        <input type="time" name="start_hour" class="rounded-lg">
-                        @error('start_hour')
+                        <label class="my-2">Durée du cours</label>
+                        <input type="time" name="duration" class="rounded-lg" value="01:00">
+                        @error('duration')
                             <div class="text-red-400">{{ $message }}</div>
                         @enderror
                     </div>
 
-                    <div class="flex flex-col align-items-center">
-                        <label class="my-2">Heure fin</label>
-                        <input type="time" name="end_hour" class="rounded-lg">
-                        @error('end_hour')
-                            <div class="text-red-400">{{ $message }}</div>
-                        @enderror
+                    <div class="flex flex-col justify-center">
+                        <label>Pack d'heures</label>
+                        <input type="checkbox" class="rounded-lg" name="hours_pack">
                     </div>
                 </div>
 
@@ -54,21 +56,27 @@
                     <div class="text-red-400">{{ $message }}</div>
                 @enderror
 
-                <label class="my-2">Taux horaire</label>
-                <input type="number" name="hourly_rate" class="rounded-lg">
-                @error('hourly_rate')
-                    <div class="text-red-400">{{ $message }}</div>
-                @enderror
+                <div class="my-2 columns-2 gap-4">
+                    <div class="flex flex-col justify-center">
+                        <label class="my-2">Taux horaire</label>
+                        <input type="number" name="hourly_rate" class="rounded-lg">
+                        @error('hourly_rate')
+                            <div class="text-red-400">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-                <label class="my-2">Facture concernée</label>
-                <select class="rounded-lg" name="invoice">
-                    @foreach ($invoices as $invoice)
-                        <option value="{{ $invoice->id }}">{{ $invoice->month_year_creation }} -- {{ $invoice->customer->name }}</option>
-                    @endforeach
-                </select>
-                @error('invoice_id')
-                    <div class="text-red-400">{{ $message }}</div>
-                @enderror
+                    <div class="flex flex-col justify-center">
+                        <label class="my-2">Facture</label>
+                        <select class="rounded-lg" name="invoice">
+                            @foreach ($invoices as $invoice)
+                                <option value="{{ $invoice->id }}">{{ $invoice->month_year_creation }} -- {{ $invoice->customer->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('invoice_id')
+                        <div class="text-red-400">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
 
                 <input type="submit" value="Confirmer" class="mt-4 rounded-lg p-2 bg-green-300">
             </form>

@@ -24,9 +24,8 @@ class UpdateCourseRequest extends FormRequest
     public function rules()
     {
         return [
-            'date' => 'required',
-            'start_hour' => 'required',
-            'end_hour' => 'required',
+            'course_date' => 'required',
+            'duration' => 'required',
             'learned_notions' => 'required',
         ];
     }
@@ -35,8 +34,7 @@ class UpdateCourseRequest extends FormRequest
     {
         return [
             'date.required' => 'Veuillez sélectionner une date',
-            'start_hour.required' => 'Veuillez choisir une heure de début',
-            'end_hour.required' => 'Veuillez choisir une heure de fin',
+            'duration.required' => 'Veuillez saisir une durée',
             'learned_notions.required' => 'Veuillez préciser les notions abordées durant le cours',
         ];
     }

@@ -18,25 +18,22 @@
                         @method('patch')
 
                         <label>Date du cours</label>
-                        <input type="date" name="date" value="{{ $course->date->format('Y-m-d') }}" class="rounded-lg mt-2">
+                        <input type="date" name="course_date" value="{{ $course->date->format('Y-m-d') }}" class="rounded-lg mt-2">
 
-                        <div class=" mt-4 columns-2 gap-4">
-                            <div class="flex flex-col">
-                                <label class="mt-2">Heure début</label>
-                                <input type="time" class="rounded-lg" name="start_hour" value="{{ $course->start_hour->format('H:i') }}">
-                            </div>
-
-                            <div class="flex flex-col">
-                                <label class="mt-2">Heure fin</label>
-                                <input type="time" class="rounded-lg" name="end_hour" value="{{ $course->end_hour->format('H:i') }}">
-                            </div>
-                        </div>
+                        <label class="mt-2">Durée du cours</label>
+                        <input type="time" name="duration" value="{{ $course->duration }}" class="rounded-lg mt-2">
 
                         <label class="mt-2">Cours payé</label>
-                        <select class="mt-2 mb-4 rounded-lg" name="paid">
-                            <option value="0" @if ($course->paid == 0) selected="selected" @endif>NON</option>
-                            <option value="1" @if ($course->paid == 1) selected="selected" @endif>OUI</option>
-                        </select>
+                        <div class="mt-2 mb-4 flex justify-center gap-4">
+                            <div>
+                                <input type="radio" id="paid_no" name="paid" value="0" @if ($course->paid == 0) checked @endif>
+                                <label for="paid_no" class="text-red-500 font-bold">NON</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="paid_yes" name="paid" value="1" @if ($course->paid == 1) checked @endif>
+                                <label for="paid_yes" class="text-green-600 font-bold">OUI</label>
+                            </div>
+                        </div>
 
                         <textarea name="learned_notions" cols="30" rows="10">
                             {!! $course->learned_notions !!}
