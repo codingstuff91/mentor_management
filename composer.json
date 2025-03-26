@@ -16,9 +16,9 @@
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^6.1",
-        "pestphp/pest": "1.23.*",
-        "phpunit/phpunit": "^9.5.10",
+        "nunomaduro/collision": "^7.0",
+        "pestphp/pest": "^2.0",
+        "phpunit/phpunit": "^10.0",
         "spatie/laravel-ignition": "^1.0"
     },
     "autoload": {
