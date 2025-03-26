@@ -27,9 +27,9 @@ class InvoiceService
 
     public static function compute_total_hours(Invoice $invoice): string
     {
-        $courses = $invoice->courses;
-
         $total = Carbon::parse('00:00');
+
+        $courses = $invoice->courses;
 
         foreach ($courses as $course) {
             $total->addHours(Carbon::parse($course->duration)->hour);
