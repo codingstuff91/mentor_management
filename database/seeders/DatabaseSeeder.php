@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     private const NUMBER_OF_CUSTOMERS = 5;
     private const NUMBER_OF_SUBJECTS = 5;
     private const NUMBER_OF_STUDENTS_PER_SUBJECT = 1;
-    private const NUMBER_OF_COURSES_PER_STUDENT = 1;
+    private const NUMBER_OF_COURSES_PER_STUDENT = 3;
 
     /**
      * Seed the application's database.
@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
             });
         });
     }
-    
+
     private function seedUser()
     {
         $this->call(UserSeeder::class);

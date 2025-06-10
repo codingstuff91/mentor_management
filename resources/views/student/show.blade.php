@@ -8,22 +8,41 @@
         </h2>
     </x-slot>
 
-    <div class="py-4">
-        <h2 class="text-2xl font-bold text-center mb-2">Objectifs</h2>
-        <div class="w-full p-4 bg-white border-b border-gray-400 mb-4">
-            <p class="my-2 text-center text-lg">{!! $student->goals !!}</p>
+    <div class="py-4 px-2 lg:px-12">
+        <div class="flex flex-col lg:flex-row lg:grid-cols-2 gap-4 mb-4">
+            <div class="w-full bg-white flex flex-col justify-center border border-gray-200 rounded-xl py-2 shadow-lg">
+                <h2 class="text-2xl font-bold text-center mb-2">Objectifs</h2>
+                <p class="my-2 text-center text-lg">{!! $student->goals !!}</p>
+            </div>
+            <div class="w-full bg-white flex flex-col justify-center border border-gray-200 rounded-xl py-2 shadow-lg">
+                <h2 class="text-2xl font-bold text-center mb-2">Commentaires</h2>
+                <p class="my-2 text-center text-lg">{!! $student->comments !!}</p>
+            </div>
         </div>
 
-        <h2 class="text-2xl font-bold text-center mt-4 mb-2">{{ $totalHours }}h de cours réalisées</h2>
+        <div class="bg-white flex flex-col justify-center rounded-xl shadow-lg border border-gray-200 w-[300px] mx-auto py-2">
+            <h2 class="text-2xl font-bold text-center mb-2">
+                Total Heures
+            </h2>
+            <p class="my-2 text-center text-xl text-center">
+                {{ $student->courses_sum_duration }}
+            </p>
+        </div>
+
         @foreach ($student->courses as $course)
-            <div class="p-2 bg-white shadow-sm border-b border-gray-400 w-full my-4 mx-auto sm:w-3/4">
-                <div class="my-2 flex flex-col justify-between">
-                    <p><i class="fas fa-calendar-day mr-2"></i>{{ $course->date->format('d/m/Y') }}</p>
-                    <p><i class="fas fa-clock"></i> {{ $course->duration }}</p>
+            <div class="mt-4 border-2 bg-white border border-gray-200 shadow-lg rounded-xl py-4">
+                <div class="flex justify-center items-center gap-4">
+                    <i class="fas fa-calendar-day"></i>
+                    <h2 class="font-bold">Date</h2>
+                    <p>{{ $course->date->format('d/m/Y') }}</p>
+
+                    <i class="fas fa-clock"></i>
+                    <h2 class="font-bold">Durée</h2>
+                    <p>{{ $course->duration }}</p>
                 </div>
-                <div class="flex flex-col w-full">
-                    <h2 class="text-xl font-bold">Notions travaillées : </h2>
-                    <p class="text-lg">{!! $course->learned_notions !!}</p>
+                <div>
+                    <h2 class="text-xl text-center font-bold mt-4">Notions abordées</h2>
+                    <p class="text-lg text-center">{!! $course->learned_notions !!}</p>
                 </div>
             </div>
         @endforeach
