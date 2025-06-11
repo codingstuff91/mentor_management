@@ -10,7 +10,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-4 px-2 lg:px-12">
+    <div class="py-8 px-2 lg:px-12">
         <div class="flex flex-col lg:flex-row lg:grid-cols-2 gap-4 mb-4">
             <div class="w-full bg-white flex flex-col justify-center border border-gray-200 rounded-xl py-2 px-2 shadow-lg">
                 <h2 class="text-2xl font-bold text-center mb-2">Objectifs</h2>
