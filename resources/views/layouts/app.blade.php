@@ -27,10 +27,8 @@
             @include('layouts.navigation')
 
             <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="mx-auto p-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
+            <header class="bg-white shadow flex justify-between p-4 sm:px-6 lg:px-72">
+                {{ $header }}
             </header>
 
             <!-- Page Content -->

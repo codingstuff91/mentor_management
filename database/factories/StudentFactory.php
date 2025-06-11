@@ -17,8 +17,8 @@ class StudentFactory extends Factory
     {
         return [
             'name'     => $this->faker->name(),
-            'goals'    => $this->faker->sentence(3),
-            'comments' => $this->faker->sentence(3),
+            'goals'    => $this->faker->sentence(30),
+            'comments' => $this->faker->sentence(30),
         ];
     }
 

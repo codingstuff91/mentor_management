@@ -24,7 +24,7 @@ class CourseFactory extends Factory
             'duration' => '01:00',
             'hourly_rate' => 10,
             'price' => CourseService::calculate_total_price("01:00", 10),
-            'learned_notions' => $this->faker->sentence(3),
+            'learned_notions' => $this->faker->sentence(30),
             'paid' => $this->faker->boolean,
         ];
     }
