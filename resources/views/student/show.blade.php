@@ -12,7 +12,7 @@
 
     <div class="py-8 px-2 lg:px-12">
         <div class="flex flex-col lg:flex-row lg:grid-cols-2 gap-4 mb-4">
-            <div class="w-full bg-white flex flex-col justify-center border border-gray-400 rounded-xl py-2 px-2 shadow-lg">
+            <div class="w-full bg-white flex flex-col justify-center border border-gray-400 rounded-xl py-2 px-2 shadow-xl">
                 <div class="flex gap-x-2 justify-center items-center">
                     <img src="/img/goals.png" class="size-8" alt="time">
                     <h2 class="text-2xl font-bold text-center">
@@ -21,7 +21,7 @@
                 </div>
                 <p class="my-2 text-center text-lg">{!! $student->goals !!}</p>
             </div>
-            <div class="w-full bg-white flex flex-col justify-center border border-gray-400 rounded-xl py-2 px-2 shadow-lg">
+            <div class="w-full bg-white flex flex-col justify-center border border-gray-400 rounded-xl py-2 px-2 shadow-xl">
                 <div class="flex justify-center items-center gap-x-2 h-full">
                     <img src="/img/comments.png" class="size-8" alt="time">
                     <h2 class="text-2xl font-bold text-center">
@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="bg-white flex flex-col justify-center rounded-xl shadow-lg border border-gray-400 w-[300px] mx-auto py-2">
+        <div class="bg-white flex flex-col justify-center rounded-xl shadow-xl border border-gray-400 w-[300px] mx-auto py-2">
             <div class="flex items-center justify-center gap-x-2">
                 <img src="/img/time.png" class="size-8" alt="time">
                 <h2 class="text-2xl font-bold text-center">
