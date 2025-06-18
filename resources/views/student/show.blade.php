@@ -32,16 +32,29 @@
             </div>
         </div>
 
-        <div class="bg-white flex flex-col justify-center rounded-xl shadow-xl border border-gray-400 w-[300px] mx-auto py-2">
-            <div class="flex items-center justify-center gap-x-2">
-                <img src="/img/time.png" class="size-8" alt="time">
-                <h2 class="text-2xl font-bold text-center">
-                    Total Heures
-                </h2>
+        <div class="flex w-full grid-cols-2 gap-x-2 lg:mx-auto lg:w-[450px]">
+            <div class="bg-white flex flex-col justify-center rounded-xl shadow-xl border border-gray-400 w-[300px] mx-auto py-2">
+                <div class="flex items-center justify-center gap-x-2">
+                    <img src="/img/time.png" class="size-8" alt="time">
+                    <h2 class="text-lg font-bold text-center lg:text-2xl">
+                        Total Heures
+                    </h2>
+                </div>
+                <p class="my-2 text-center text-xl text-center">
+                    {{ $totalCourseHours }}
+                </p>
             </div>
-            <p class="my-2 text-center text-xl text-center">
-                {{ $totalCourseHours }}
-            </p>
+            <div class="bg-white flex flex-col justify-center rounded-xl shadow-xl border border-gray-400 w-[300px] mx-auto py-2">
+                <div class="flex items-center justify-center gap-x-2">
+                    <img src="/img/lesson.png" class="size-8" alt="time">
+                    <h2 class="text-lg font-bold text-center lg:text-2xl">
+                        Nombre cours
+                    </h2>
+                </div>
+                <p class="my-2 text-center text-xl text-center">
+                    {{ $student->courses_count }}
+                </p>
+            </div>
         </div>
 
         <div class="flex flex-col gap-2 lg:grid lg:grid-cols-4">
