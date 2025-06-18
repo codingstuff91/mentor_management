@@ -12,41 +12,56 @@
 
     <div class="py-8 px-2 lg:px-12">
         <div class="flex flex-col lg:flex-row lg:grid-cols-2 gap-4 mb-4">
-            <div class="w-full bg-white flex flex-col justify-center border border-gray-200 rounded-xl py-2 px-2 shadow-lg">
-                <h2 class="text-2xl font-bold text-center mb-2">Objectifs</h2>
+            <div class="w-full bg-white flex flex-col justify-center border border-gray-400 rounded-xl py-2 px-2 shadow-lg">
+                <div class="flex gap-x-2 justify-center items-center">
+                    <img src="/img/goals.png" class="size-8" alt="time">
+                    <h2 class="text-2xl font-bold text-center">
+                        Objectifs
+                    </h2>
+                </div>
                 <p class="my-2 text-center text-lg">{!! $student->goals !!}</p>
             </div>
-            <div class="w-full bg-white flex flex-col justify-center border border-gray-200 rounded-xl py-2 px-2 shadow-lg">
-                <h2 class="text-2xl font-bold text-center mb-2">Commentaires</h2>
+            <div class="w-full bg-white flex flex-col justify-center border border-gray-400 rounded-xl py-2 px-2 shadow-lg">
+                <div class="flex justify-center items-center gap-x-2 h-full">
+                    <img src="/img/comments.png" class="size-8" alt="time">
+                    <h2 class="text-2xl font-bold text-center">
+                        Commentaires
+                    </h2>
+                </div>
                 <p class="my-2 text-center text-lg">{!! $student->comments !!}</p>
             </div>
         </div>
 
-        <div class="bg-white flex flex-col justify-center rounded-xl shadow-lg border border-gray-200 w-[300px] mx-auto py-2">
-            <h2 class="text-2xl font-bold text-center mb-2">
-                Total Heures
-            </h2>
+        <div class="bg-white flex flex-col justify-center rounded-xl shadow-lg border border-gray-400 w-[300px] mx-auto py-2">
+            <div class="flex items-center justify-center gap-x-2">
+                <img src="/img/time.png" class="size-8" alt="time">
+                <h2 class="text-2xl font-bold text-center">
+                    Total Heures
+                </h2>
+            </div>
             <p class="my-2 text-center text-xl text-center">
-                {{ $student->courses_sum_duration }}
+                {{ $totalCourseHours }}
             </p>
         </div>
 
-        @foreach ($student->courses as $course)
-            <div class="mt-4 border-2 bg-white border border-gray-200 shadow-lg rounded-xl py-4 px-2">
-                <div class="flex justify-center items-center gap-4">
-                    <i class="fas fa-calendar-day"></i>
-                    <h2 class="font-bold">Date</h2>
-                    <p>{{ $course->date->format('d/m/Y') }}</p>
+        <div class="flex flex-col gap-2 lg:grid lg:grid-cols-4">
+            @foreach ($student->courses as $course)
+                <div class="mt-4 border-2 bg-white border border-gray-200 shadow-lg rounded-xl py-4 px-2">
+                    <div class="flex justify-center gap-x-4 items-center gap-4">
+                        <i class="fas fa-calendar-day"></i>
+                        <h2 class="font-bold">Date</h2>
+                        <p>{{ $course->date->format('d/m/Y') }}</p>
 
-                    <i class="fas fa-clock"></i>
-                    <h2 class="font-bold">Durée</h2>
-                    <p>{{ $course->duration }}</p>
+                        <i class="fas fa-clock"></i>
+                        <h2 class="font-bold">Durée</h2>
+                        <p>{{ $course->duration }}</p>
+                    </div>
+                    <div>
+                        <h2 class="text-xl text-center font-bold mt-4">Notions abordées</h2>
+                        <p class="text-lg text-center">{!! $course->learned_notions !!}</p>
+                    </div>
                 </div>
-                <div>
-                    <h2 class="text-xl text-center font-bold mt-4">Notions abordées</h2>
-                    <p class="text-lg text-center">{!! $course->learned_notions !!}</p>
-                </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
 </x-app-layout>
