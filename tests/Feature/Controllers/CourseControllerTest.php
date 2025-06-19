@@ -141,7 +141,7 @@ test('update a course with its invoice', function () {
     expect($this->course->learned_notions)
         ->toBe("Example notions text")
         ->and($this->course->paid)->toBe(1)
-        ->and($this->course->duration)->toBe('01:00')
+        ->and($this->course->duration)->toBe('01:00:00')
         ->and($this->course->invoice->id)->toBe($newInvoice->id);
 });
 
