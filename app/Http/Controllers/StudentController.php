@@ -69,9 +69,10 @@ class StudentController extends Controller
                 return $query->orderByDesc('date');
             })
             ->withCount('courses')
+            ->withSum('courses', 'course_duration')
             ->first();
 
-        $coursesDuration = CourseService::tranform_duration_into_HH_MM_format($student->courses->sum('course_duration'));
+        $coursesDuration = CourseService::tranform_duration_into_HH_MM_format($student->courses_sum_course_duration);
 
         return view('student.show')->with([
             'student' => $student,
