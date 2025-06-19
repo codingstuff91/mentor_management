@@ -9,7 +9,7 @@ class CourseService
 {
     public static function calculate_total_price(string $duration, int $hourlyRate): float
     {
-        $durationInHours = self::tranform_course_duration_in_minutes_into_HH_MM_format($duration);
+        $durationInHours = self::tranform_duration_into_HH_MM_format($duration);
 
         $hoursCount = Carbon::parse($durationInHours)->hour + (Carbon::parse($durationInHours)->minute / 60);
 
@@ -23,10 +23,10 @@ class CourseService
         return ($hours * 60 + $minutes);
     }
 
-    public static function tranform_course_duration_in_minutes_into_HH_MM_format(string $courseDuration): string
+    public static function tranform_duration_into_HH_MM_format(string $courseDurationInMinutes): string
     {
-        $hours = floor($courseDuration / 60);
-        $remainingMinutes = $courseDuration % 60;
+        $hours = floor($courseDurationInMinutes / 60);
+        $remainingMinutes = $courseDurationInMinutes % 60;
 
         return sprintf('%02d:%02d', $hours, $remainingMinutes);
     }
