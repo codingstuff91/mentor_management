@@ -18,7 +18,7 @@ class CourseService
 
     public static function transform_duration_in_minutes(string $courseDuration): float
     {
-        [$hours, $minutes, $seconds] = explode(":", $courseDuration);
+        [$hours, $minutes] = explode(":", $courseDuration);
 
         return ($hours * 60 + $minutes);
     }
