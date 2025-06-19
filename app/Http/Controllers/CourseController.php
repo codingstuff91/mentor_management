@@ -63,6 +63,7 @@ class CourseController extends Controller
             'invoice_id' => $request->invoice,
             'date' => $request->course_date,
             'duration' => $request->duration,
+            'course_duration' => CourseService::transform_duration_in_minutes($request->duration),
             'paid' => $request->paid,
             'hours_pack' => $isHoursPack,
             'learned_notions' => $request->learned_notions,
