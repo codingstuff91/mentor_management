@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('courses', function (Blueprint $table) {
-            $table->float('price', 2, 1)->after('hourly_rate');
+            $table->integer('price')->after('hourly_rate');
         });
     }
 };
