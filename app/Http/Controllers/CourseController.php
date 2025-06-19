@@ -58,19 +58,17 @@ class CourseController extends Controller
     {
         $isHoursPack = isset($request->hours_pack) ? 1 : 0;
 
-        $courseDurationInMinutes = CourseService::transform_duration_in_minutes($request->duration);
-
         Course::create([
             'student_id' => $request->student,
             'invoice_id' => $request->invoice,
             'date' => $request->course_date,
             'duration' => $request->duration,
-            'course_duration' => $courseDurationInMinutes,
+            'course_duration' => CourseService::transform_duration_in_minutes($request->duration),
             'paid' => $request->paid,
             'hours_pack' => $isHoursPack,
             'learned_notions' => $request->learned_notions,
             'hourly_rate' => $request->hourly_rate,
-            'price' => CourseService::calculate_total_price($courseDurationInMinutes, $request->hourly_rate),
+            'price' => CourseService::calculate_total_price($request->duration, $request->hourly_rate),
         ]);
 
         return redirect()->route('course.index');

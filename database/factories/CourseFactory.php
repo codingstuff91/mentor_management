@@ -21,10 +21,10 @@ class CourseFactory extends Factory
             'student_id' => Student::all()->random()->id,
             'invoice_id' => Invoice::all()->random()->id,
             'date' => now()->format('Y-m-d'),
-            'duration' => '01:00',
+            'duration' => '01:00:00',
             'course_duration' => 60,
             'hourly_rate' => 10,
-            'price' => CourseService::calculate_total_price(60, 10),
+            'price' => CourseService::calculate_total_price("01:00:00", 10),
             'learned_notions' => $this->faker->sentence(30),
             'paid' => $this->faker->boolean,
         ];

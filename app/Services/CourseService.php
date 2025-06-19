@@ -9,11 +9,9 @@ class CourseService
 {
     public static function calculate_total_price(string $duration, int $hourlyRate): int
     {
-        $durationInHours = self::tranform_duration_into_HH_MM_format($duration);
+        $hoursCount = Carbon::parse($duration)->hour + (Carbon::parse($duration)->minute / 60);
 
-        $hoursCount = Carbon::parse($durationInHours)->hour + (Carbon::parse($durationInHours)->minute / 60);
-
-        return (int) $hoursCount * $hourlyRate;
+        return $hoursCount * $hourlyRate;
     }
 
     public static function transform_duration_in_minutes(string $courseDuration): int
