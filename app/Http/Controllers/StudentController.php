@@ -7,7 +7,9 @@ use App\Models\Customer;
 use App\Models\Subject;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
+use App\Services\CourseService;
 use App\Services\StudentService;
+use Carbon\CarbonInterval;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -69,14 +71,11 @@ class StudentController extends Controller
             ->withCount('courses')
             ->first();
 
-        $totalCourseHours = DB::table('courses')
-            ->select(DB::raw("SEC_TO_TIME(SUM(TIME_TO_SEC(duration))) as total_duration"))
-            ->where('student_id', $student->id)
-            ->value('total_duration');
+        $coursesDuration = CourseService::tranform_duration_into_HH_MM_format($student->courses->sum('course_duration'));
 
         return view('student.show')->with([
             'student' => $student,
-            'totalCourseHours' => $totalCourseHours,
+            'totalCourseHours' => $coursesDuration,
         ]);
     }
 
