@@ -3,10 +3,7 @@
 use App\Models\Course;
 use App\Models\Student;
 use App\Models\Subject;
-use App\Services\StudentService;
 use Tests\Factories\StudentRequestDataFactory;
-use function Pest\Laravel\assertDatabaseCount;
-use function Pest\Laravel\delete;
 use function Pest\Laravel\get;
 use function Pest\Laravel\patch;
 use function Pest\Laravel\post;
