@@ -20,6 +20,11 @@ class Course extends Model
         'date' => 'date',
     ];
 
+    public function scopeIsNotHoursPack($query)
+    {
+        return $query->where('hours_pack', false)->get();
+    }
+
     public function invoice()
     {
         return $this->belongsTo('App\Models\Invoice');
