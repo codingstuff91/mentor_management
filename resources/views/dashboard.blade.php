@@ -15,7 +15,7 @@
                         </div>
                         <div class="p-2 flex flex-col content-center items-center">
                             <h2 class="text-sm sm:text-xl">Total Heures</h2>
-                            <h3 class="text-sm mt-2 font-bold sm:text-xl">{{ $totalCoursesHours[0]->total }}</h3>
+                            <h3 class="text-sm mt-2 font-bold sm:text-xl">{{ $totalCoursesHours }}</h3>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="p-2 flex flex-col content-center items-center">
                             <h2 class="text-sm sm:text-xl">Total revenus</h2>
-                            <h3 class="text-sm mt-2 font-bold sm:text-xl">{{ $totalRevenues[0]->total }}</h3>
+                            <h3 class="text-sm mt-2 font-bold sm:text-xl">{{ $totalRevenues }}</h3>
                         </div>
                     </div>
                 </div>
@@ -74,12 +74,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @for ($i = 0; $i < $totalHoursPerSubject->count(); $i++)
-                                <tr>
-                                    <td class="border-2 border-gray-600 p-2 bg-blue-200 text-center sm:text-x">{{ $totalHoursPerSubject[$i]->name }}</td>
-                                    <td class="border-2 border-gray-600 p-2 bg-blue-200 text-center sm:text-x">{{ $totalHoursPerSubject[$i]->total }}</td>
-                                </tr>
-                            @endfor
+                        @foreach($totalHoursPerSubject as $key => $value)
+                            <tr>
+                                <td class="border-2 border-gray-600 p-2 bg-blue-200 text-center sm:text-x">{{ $key }}</td>
+                                <td class="border-2 border-gray-600 p-2 bg-blue-200 text-center sm:text-x">{{ $value }}</td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
