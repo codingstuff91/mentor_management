@@ -8,13 +8,11 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::table('courses', function (Blueprint $table) {
-            $table->float('price', 2, 1)->after('hourly_rate');
+            $table->integer('price')->change();
         });
     }
 };
