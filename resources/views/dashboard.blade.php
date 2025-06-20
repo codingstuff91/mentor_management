@@ -6,56 +6,44 @@
     </x-slot>
 
     <div class="my-6 pt-4">
-        <div class="px-2 mx-auto columns-2 gap-4 lg:columns-4 lg:gap-4 lg:max-w-7xl lg:px-8">
-            <div class="bg-white shadow-lg rounded-xl mb-4">
-                <div class="p-4 bg-white rounded-lg">
-                    <div class="flex space-between h-20">
-                        <div>
-                            <img class="h-full" src="{{ asset('img/time.png') }}">
-                        </div>
-                        <div class="p-2 flex flex-col content-center items-center">
-                            <h2 class="text-sm sm:text-xl">Total Heures</h2>
-                            <h3 class="text-sm mt-2 font-bold sm:text-xl">{{ $totalCoursesHours }}</h3>
-                        </div>
+        <div class="px-2 mx-auto columns-2 gap-x-4 lg:columns-4 lg:gap-4 lg:max-w-7xl lg:px-8">
+            <div class="bg-white shadow-lg rounded-xl p-4">
+                <div class="flex justify-between items-center px-4 h-20">
+                    <img class="h-full" src="{{ asset('img/time.png') }}">
+
+                    <div class="flex flex-col gap-y-4 justify-center items-center">
+                        <h2 class="text-sm sm:text-xl font-bold">Total Heures</h2>
+                        <h3 class="text-sm sm:text-xl">{{ $totalCourses }}</h3>
                     </div>
                 </div>
             </div>
-            <div class="bg-white shadow-lg rounded-xl mb-4">
-                <div class="p-4 bg-white rounded-lg">
-                    <div class="flex space-between h-20">
-                        <div>
-                            <img class="h-full" src="{{ asset('img/lesson.png') }}">
-                        </div>
-                        <div class="p-2 flex flex-col content-center items-center">
-                            <h2 class="text-sm sm:text-xl">Total Cours</h2>
-                            <h3 class="text-sm mt-2 font-bold sm:text-xl">{{ $totalCourses }}</h3>
-                        </div>
+            <div class="bg-white shadow-lg rounded-xl p-4">
+                <div class="flex justify-between items-center px-4 h-20">
+                    <img class="h-full" src="{{ asset('img/lesson.png') }}">
+
+                    <div class="flex flex-col gap-y-4 justify-center items-center">
+                        <h2 class="text-sm sm:text-xl font-bold">Total Cours</h2>
+                        <h3 class="text-sm sm:text-xl">{{ $totalCourses }}</h3>
                     </div>
                 </div>
             </div>
-            <div class="bg-white shadow-lg rounded-xl mb-4">
-                <div class="p-4 bg-white rounded-lg">
-                    <div class="flex space-between h-20">
-                        <div>
-                            <img class="h-full" src="{{ asset('img/money.png') }}">
-                        </div>
-                        <div class="p-2 flex flex-col content-center items-center">
-                            <h2 class="text-sm sm:text-xl">Total revenus</h2>
-                            <h3 class="text-sm mt-2 font-bold sm:text-xl">{{ $totalRevenues }}</h3>
-                        </div>
+            <div class="bg-white shadow-lg rounded-xl p-4">
+                <div class="flex justify-between items-center px-4 h-20">
+                    <img class="h-full" src="{{ asset('img/money.png') }}">
+
+                    <div class="flex flex-col gap-y-4 justify-center items-center">
+                        <h2 class="text-sm sm:text-xl font-bold">Total revenus</h2>
+                        <h3 class="text-sm sm:text-xl">{{ $totalRevenues }}</h3>
                     </div>
                 </div>
             </div>
-            <div class="bg-white shadow-lg rounded-xl mb-4">
-                <div class="p-4 bg-white rounded-lg">
-                    <div class="flex space-between h-20">
-                        <div>
-                            <img class="h-full" src="{{ asset('img/student.png') }}">
-                        </div>
-                        <div class="p-2 flex flex-col content-center items-center">
-                            <h2 class="text-sm sm:text-xl">Total Eleves</h2>
-                            <h3 class="text-sm mt-2 font-bold sm:text-xl">{{ $totalStudents }}</h3>
-                        </div>
+            <div class="bg-white shadow-lg rounded-xl p-4">
+                <div class="flex justify-between items-center px-4 h-20">
+                    <img class="h-full" src="{{ asset('img/student.png') }}">
+
+                    <div class="flex flex-col gap-y-4 justify-center items-center">
+                        <h2 class="text-sm sm:text-xl font-bold">Total Eleves</h2>
+                        <h3 class="text-sm sm:text-xl">{{ $totalStudents }}</h3>
                     </div>
                 </div>
             </div>
