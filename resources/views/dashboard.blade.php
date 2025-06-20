@@ -7,7 +7,7 @@
 
     <div class="my-6 pt-4">
         <div class="px-2 mx-auto columns-2 gap-x-4 lg:columns-4 lg:gap-4 lg:max-w-7xl lg:px-8">
-            <div class="bg-white shadow-lg rounded-xl p-4">
+            <div class="bg-white border border-gray-400 shadow-lg rounded-xl p-4">
                 <div class="flex justify-between items-center px-4 h-20">
                     <img class="h-full" src="{{ asset('img/time.png') }}">
 
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-white shadow-lg rounded-xl p-4">
+            <div class="bg-white border border-gray-400 shadow-lg rounded-xl p-4">
                 <div class="flex justify-between items-center px-4 h-20">
                     <img class="h-full" src="{{ asset('img/lesson.png') }}">
 
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-white shadow-lg rounded-xl p-4">
+            <div class="bg-white border border-gray-400 shadow-lg rounded-xl p-4">
                 <div class="flex justify-between items-center px-4 h-20">
                     <img class="h-full" src="{{ asset('img/money.png') }}">
 
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-white shadow-lg rounded-xl p-4">
+            <div class="bg-white border border-gray-400 shadow-lg rounded-xl p-4">
                 <div class="flex justify-between items-center px-4 h-20">
                     <img class="h-full" src="{{ asset('img/student.png') }}">
 
