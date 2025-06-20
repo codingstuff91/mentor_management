@@ -18,5 +18,5 @@ it('updates courses tables with calculated courses prices', function () {
     artisan('courses:calculate-prices');
 
     // Then (check the price is updated)
-    expect(Course::first()->price)->toBe(10.0);
+    expect(Course::first()->price)->toBe(10);
 });

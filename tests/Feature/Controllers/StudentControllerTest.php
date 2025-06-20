@@ -3,10 +3,7 @@
 use App\Models\Course;
 use App\Models\Student;
 use App\Models\Subject;
-use App\Services\StudentService;
 use Tests\Factories\StudentRequestDataFactory;
-use function Pest\Laravel\assertDatabaseCount;
-use function Pest\Laravel\delete;
 use function Pest\Laravel\get;
 use function Pest\Laravel\patch;
 use function Pest\Laravel\post;
@@ -107,11 +104,21 @@ test('can render the show student view', function () {
 });
 
 test('can display the total hours of a student on the show view', function () {
-    $totalCoursesHours = StudentService::count_total_hours($this->student);
+    $expectedTotalHoursCount = "01:00";
 
     get(route('student.show', $this->student))
         ->assertOk()
-        ->assertSeeText($totalCoursesHours);
+        ->assertSeeText("Total Heures")
+        ->assertSeeText($expectedTotalHoursCount);
+});
+
+test('display the total count of lessons given for a student on the show view', function () {
+    $expectedTotalHoursCount = 01;
+
+    get(route('student.show', $this->student))
+        ->assertOk()
+        ->assertSeeText("Nombre cours")
+        ->assertSeeText($expectedTotalHoursCount);
 });
 
 test('can display the course details of a student', function () {

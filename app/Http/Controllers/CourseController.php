@@ -63,6 +63,7 @@ class CourseController extends Controller
             'invoice_id' => $request->invoice,
             'date' => $request->course_date,
             'duration' => $request->duration,
+            'course_duration' => CourseService::transform_duration_in_minutes($request->duration),
             'paid' => $request->paid,
             'hours_pack' => $isHoursPack,
             'learned_notions' => $request->learned_notions,
@@ -98,10 +99,13 @@ class CourseController extends Controller
      */
     public function update(UpdateCourseRequest $request, Course $course)
     {
+        $courseDurationInMinutes = CourseService::transform_duration_in_minutes($request->duration);
+
         $course->update([
             'paid' => $request->paid,
             'date' => $request->course_date,
             'duration' => $request->duration,
+            'course_duration' => $courseDurationInMinutes,
             'learned_notions' => $request->learned_notions,
             'invoice_id' => $request->invoice,
         ]);
