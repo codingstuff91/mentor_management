@@ -17,7 +17,6 @@
         <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
 
         <!-- Scripts -->
-        <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
@@ -35,15 +34,6 @@
             </main>
         </div>
 
-        <script>
-            ClassicEditor
-                .create(document.querySelector('textarea'))
-                .then( editor => {
-                        console.log( editor );
-                } )
-                .catch( error => {
-                        console.error( error );
-                } );
-        </script>
+        @yield('scripts')
     </body>
 </html>
