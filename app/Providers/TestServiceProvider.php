@@ -21,4 +21,3 @@ class TestServiceProvider extends ServiceProvider
         }
     }
 }
-}
