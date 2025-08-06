@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if ($this->app->environment('testing')) {
+            $this->app->register(\App\Providers\TestServiceProvider::class);
+        }
     }
 
     /**
