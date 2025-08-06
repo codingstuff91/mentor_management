@@ -57,4 +57,14 @@
             </div>
         </div>
     </div>
+    
+    @section('scripts')
+        <script>
+            ClassicEditor
+                .create(document.querySelector('textarea'))
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
+    @endsection
 </x-app-layout>
